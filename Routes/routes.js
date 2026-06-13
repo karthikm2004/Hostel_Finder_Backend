@@ -19,6 +19,7 @@ console.log(multerConfig)
 // users
 router.post('/signup', userControllers.signUp)
 router.post('/signin', userControllers.signIn)
+router.put('/update-user',jwtmiddle,userControllers.userProfileUpdate)
 router.get('/all-users', jwtmiddle, userControllers.getAllUsers)
 
 // owner

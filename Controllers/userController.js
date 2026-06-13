@@ -95,6 +95,25 @@ exports.signIn = async (req, res) => {
 }
 
 
+// update user profile
+exports.userProfileUpdate = async (req, res) => {
+    try {
+        const userId = req.payload
+        const { firstName, lastName, location, phone, email, profile } = req.body
+        const updateUser = await users.findByIdAndUpdate(userId,{
+            firstName, lastName, email, phone, location, profile
+        },{new:true})
+        res.status(200).json(updateUser)
+
+    }
+    catch (err) {
+        console.log(err);
+        res.status(500).json(err)
+
+    }
+}
+
+
 
 // GET ALL USERS
 exports.getAllUsers = async (req, res) => {
