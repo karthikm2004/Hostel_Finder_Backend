@@ -8,12 +8,17 @@ const cors=require('cors')
 
 const app = express()
 
-app.use(cors())
+app.use(cors({
+    origin:[
+         "http://localhost:5173",
+        "https://hostel-finder-frontend-dax1.vercel.app"
+    ]
+}))
 app.use(express.json())
 app.use(router)
 app.use('/uploadImg', express.static(path.join(__dirname, 'hostelImages')))
 
-const PORT = 3000 || process.env.PORT
+const PORT = process.env.PORT || 3000
 
 
 const reqHandler = (req, res) => {
