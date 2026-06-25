@@ -3,16 +3,17 @@ require('./Conection/conection')
 
 const express = require('express')
 const path = require('path')
-const router=require('./Routes/routes')
-const cors=require('cors')
+const router = require('./Routes/routes')
+const cors = require('cors')
 
 const app = express()
 
 app.use(cors({
-    origin:[
-         "http://localhost:5173",
-        "https://hostel-finder-frontend-dax1.vercel.app"
-    ]
+    origin: [
+        "http://localhost:5173",
+        "https://hostel-finder-frontend-ime9.vercel.app"
+    ],
+    credentials: true
 }))
 app.use(express.json())
 app.use(router)
