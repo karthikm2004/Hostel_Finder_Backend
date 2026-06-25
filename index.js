@@ -11,7 +11,7 @@ const app = express()
 app.use(cors({
     origin: [
         "http://localhost:5173",
-        "https://hostel-finder-frontend-ime9.vercel.app"
+        "https://hostel-finder-frontend-sandy.vercel.app"
     ],
     credentials: true
 }))
